@@ -1,0 +1,66 @@
+<zk>
+    <window title="Customer Management" border="normal" width="1050px"
+            viewModel="@id('vm') @init('id.my.jvm.zkoosdemo1.customer.CustomerViewModel')">
+
+        <toolbar>
+            <button label="New Customer" onClick="@command('newCustomer')"/>
+        </toolbar>
+
+        <listbox model="@load(vm.customers)" height="400px" mold="paging" pageSize="10"
+                 emptyMessage="No customers yet. Click 'New Customer' to add one.">
+            <listhead sizable="true">
+                <listheader label="Name" width="180px"/>
+                <listheader label="Email" width="220px"/>
+                <listheader label="Phone" width="160px"/>
+                <listheader label="Address" width="260px"/>
+                <listheader label="Actions" width="190px" align="center"/>
+            </listhead>
+            <template name="model" var="customer">
+                <listitem>
+                    <listcell label="@load(customer.name)"/>
+                    <listcell label="@load(customer.email)"/>
+                    <listcell label="@load(customer.phone)"/>
+                    <listcell label="@load(customer.address)"/>
+                    <listcell>
+                        <hlayout>
+                            <button label="Edit" onClick="@command('edit', customer=customer)"/>
+                            <button label="Delete" onClick="@command('delete', customer=customer)"/>
+                        </hlayout>
+                    </listcell>
+                </listitem>
+            </template>
+        </listbox>
+
+        <window title="Customer Form" border="normal" width="380px" closable="true"
+                visible="@load(vm.showForm)" position="center" mode="overlapped">
+            <grid>
+                <columns>
+                    <column width="90px"/>
+                    <column/>
+                </columns>
+                <rows>
+                    <row>
+                        Name
+                        <textbox value="@bind(vm.selected.name)" width="250px" constraint="no empty"/>
+                    </row>
+                    <row>
+                        Email
+                        <textbox value="@bind(vm.selected.email)" width="250px"/>
+                    </row>
+                    <row>
+                        Phone
+                        <textbox value="@bind(vm.selected.phone)" width="250px"/>
+                    </row>
+                    <row>
+                        Address
+                        <textbox value="@bind(vm.selected.address)" width="250px" multiline="true" rows="2"/>
+                    </row>
+                </rows>
+            </grid>
+            <hlayout>
+                <button label="Save" onClick="@command('save')"/>
+                <button label="Cancel" onClick="@command('cancel')"/>
+            </hlayout>
+        </window>
+    </window>
+</zk>
