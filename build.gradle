@@ -27,7 +27,7 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
     implementation "org.zkoss.zkspringboot:zkspringboot-starter:${zkspringbootVersion}"
-    implementation 'org.zkoss.zk:zkplus:10.0.0-jakarta'
+    implementation 'org.zkoss.zk:zkplus:11.0.0-jakarta.FL.20260812-Eval'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'
