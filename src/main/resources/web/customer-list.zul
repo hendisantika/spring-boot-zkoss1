@@ -1,18 +1,18 @@
 <zk>
-    <window title="Customer Management" border="normal" width="1050px"
+    <window title="Customer Management" border="normal" width="1300px"
             viewModel="@id('vm') @init('id.my.jvm.zkoosdemo1.customer.CustomerViewModel')">
 
         <toolbar>
             <button label="New Customer" onClick="@command('newCustomer')"/>
         </toolbar>
 
-        <listbox model="@load(vm.customers)" height="400px" mold="paging" pageSize="10"
+        <listbox model="@load(vm.customers)" height="500px" mold="paging" pageSize="15"
                  emptyMessage="No customers yet. Click 'New Customer' to add one.">
             <listhead sizable="true">
-                <listheader label="Name" width="180px"/>
-                <listheader label="Email" width="220px"/>
-                <listheader label="Phone" width="160px"/>
-                <listheader label="Address" width="260px"/>
+                <listheader label="Name" width="220px"/>
+                <listheader label="Email" width="320px"/>
+                <listheader label="Phone" width="200px"/>
+                <listheader label="Address" width="220px"/>
                 <listheader label="Actions" width="190px" align="center"/>
             </listhead>
             <template name="model" var="customer">
