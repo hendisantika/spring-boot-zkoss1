@@ -26,7 +26,18 @@ screen: list, create, edit and delete customers, all through ZK's MVVM data bind
 ```
 
 Then open [http://localhost:8080](http://localhost:8080) — the root path is mapped straight to the customer
-list page. On first run, a few sample customers are seeded automatically.
+list page. On first run, 50 sample customers are seeded automatically: anime characters from Naruto, One Piece,
+Jujutsu Kaisen, Demon Slayer and Doraemon (10 from each series, with the series name stored in the Address field).
+
+## Screenshots
+
+**Customer list**
+
+![Customer list](docs/screenshots/customer-list.jpg)
+
+**Create / edit form**
+
+![Customer form](docs/screenshots/customer-form.jpg)
 
 ## Project Structure
 
